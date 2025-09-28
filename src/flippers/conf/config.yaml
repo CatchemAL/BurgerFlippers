@@ -1,0 +1,8 @@
+defaults:
+  - order_service: full
+  - chef: default
+  - courier: premium
+  - _self_
+
+_target_: flippers.burger_joint.BurgerJoint
+  

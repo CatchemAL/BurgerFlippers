@@ -1,0 +1,3 @@
+_target_: flippers.order_service.VeganOrderService
+num_orders: 15
+order_frequency: "00:00:02"

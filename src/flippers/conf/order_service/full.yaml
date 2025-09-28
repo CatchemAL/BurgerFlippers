@@ -1,0 +1,4 @@
+_target_: flippers.order_service.FullOrderService
+num_orders: 20
+order_frequency: "00:00:01"
+smash_probability: 0.7
