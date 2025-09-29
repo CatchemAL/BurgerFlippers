@@ -1,7 +1,7 @@
-from typing import Literal
+from typing import Annotated, Literal
 
 
-from pydantic import NonNegativeInt, PositiveFloat
+from pydantic import Field, NonNegativeInt, PositiveFloat
 
 from flippers.core.base_model import FlipperBaseModel
 from flippers.models import Burger
@@ -23,4 +23,7 @@ class SlowCourier(FlipperBaseModel):
         print(f"You are in position {self.queue_size} ({burger.description})")
 
 
-type Courier = PremiumCourier | SlowCourier
+type Courier = Annotated[
+    PremiumCourier | SlowCourier,
+    Field(discriminator="kind"),
+]

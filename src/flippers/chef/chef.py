@@ -7,8 +7,10 @@ from flippers.models.orders import BurgerOrder, SmashBurgerOrder, VeggieBurgerOr
 
 
 class Chef(FlipperBaseModel):
+    name: str
+
     def prepare(self, order: BurgerOrder) -> Burger:
-        print("Preparing...")
+        print(f"Your order is being prepared by {self.name}...")
         match order:
             case SmashBurgerOrder(num_patties=np, cheese=cheese, include_onions=io):
                 descr = f"🍔: {np} patties, {cheese} cheese" + (" +onions" if io else "")

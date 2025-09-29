@@ -23,7 +23,7 @@ class FullOrderService(OrderService):
     @override
     def get_online_orders(self) -> Iterable[BurgerOrder]:
         for _ in range(self.num_orders):
-            print("\nCreating order...")
+            print("\nCreating orders...")
             is_smash = random.uniform(0, 1) <= self.smash_probability
             if is_smash:
                 order = SmashBurgerOrder(
@@ -48,7 +48,7 @@ class VeganOrderService(OrderService):
     @override
     def get_online_orders(self) -> Iterable[BurgerOrder]:
         for _ in range(self.num_orders):
-            print("\nCreating order...")
+            print("\nCreating vegan orders...")
             order = VeggieBurgerOrder(
                 veggie_patty="black_bean",
                 cheese="none",
